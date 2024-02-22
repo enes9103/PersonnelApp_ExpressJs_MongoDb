@@ -8,7 +8,6 @@ const Department = require('../models/department.model')
 module.exports = {
 
     list: async (req, res) => {
-
         // const data = await Department.find(search).sort(sort).skip(skip).limit(limit)
         const data = await res.getModelList(Department)
 
@@ -21,7 +20,6 @@ module.exports = {
     },
 
     create: async (req, res) => {
-
         const data = await Department.create(req.body)
 
         res.status(201).send({
@@ -32,7 +30,6 @@ module.exports = {
     },
 
     read: async (req, res) => {
-
         const data = await Department.findOne({ _id: req.params.id })
 
         res.status(200).send({
@@ -43,7 +40,6 @@ module.exports = {
     },
 
     update: async (req, res) => {
-
         const data = await Department.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 
         res.status(202).send({
@@ -54,7 +50,6 @@ module.exports = {
     },
 
     delete: async (req, res) => {
-
         const data = await Department.deleteOne({ _id: req.params.id })
 
         res.status(data.deletedCount ? 204 : 404).send({
@@ -71,7 +66,6 @@ module.exports = {
     },
 
     personnels: async (req, res) => {
-
         const Personnel = require('../models/personnel.model')
 
         const data = await res.getModelList(Personnel, { departmentId: req.params.id }, 'departmentId')
