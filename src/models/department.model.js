@@ -15,6 +15,7 @@ const DepartmentSchema = new mongoose.Schema({
     }
 
 }, { collection: "departments", timestamps: true })
+// collection: db name
 
 /* ------------------------------------------------------- */
 module.exports = mongoose.model('Department', DepartmentSchema)
