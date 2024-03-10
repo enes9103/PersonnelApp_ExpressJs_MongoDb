@@ -74,12 +74,5 @@ module.exports = {
       error: !data.deletedCount,
       data,
     });
-
-    // const isDeleted = data.deletedCount >= 1 ? true : false;
-
-    // res.status(isDeleted ? 204 : 404).send({
-    //   error: !isDeleted,
-    //   data,
-    // });
   },
 };
